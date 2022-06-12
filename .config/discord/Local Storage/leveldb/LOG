@@ -1,0 +1,5 @@
+2022/06/12-10:07:52.550 bf6 Creating DB /home/yuri/.config/discord/Local Storage/leveldb since it was missing.
+2022/06/12-10:07:52.556 bf6 Reusing MANIFEST /home/yuri/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2022/06/12-10:14:45.537 bf7 Level-0 table #5: started
+2022/06/12-10:14:45.547 bf7 Level-0 table #5: 457323 bytes OK
+2022/06/12-10:14:45.549 bf7 Delete type=0 #3
