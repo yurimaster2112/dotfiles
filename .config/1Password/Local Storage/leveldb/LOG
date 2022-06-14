@@ -1,2 +1,3 @@
-2022/06/12-10:03:18.686 99c Creating DB /home/yuri/.config/1Password/Local Storage/leveldb since it was missing.
-2022/06/12-10:03:18.692 99c Reusing MANIFEST /home/yuri/.config/1Password/Local Storage/leveldb/MANIFEST-000001
+2022/06/13-21:02:01.237 967 Reusing MANIFEST /home/yuri/.config/1Password/Local Storage/leveldb/MANIFEST-000001
+2022/06/13-21:02:01.238 967 Recovering log #3
+2022/06/13-21:02:01.238 967 Reusing old log /home/yuri/.config/1Password/Local Storage/leveldb/000003.log 
