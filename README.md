@@ -25,12 +25,23 @@
  
    Clone Vim Plug:
    ``` curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ```
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ```
    
     Install Plugins:
     ``` :PlugInstall ```
     
     Install JSnode:
+    ```
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    ```
+    Setup COC:
+    ``` CocInstall coc-clangd
+        CocInstall coc-jedi
+        CocInstall coc-python
+        CocInstall coc-sh
+     ```
     
     
  
