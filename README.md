@@ -69,7 +69,17 @@
     
     
     Setup I3
+    ```
+    sudo apt install i3
+    ```
     
+    i3-gaps:
+    ```
+    sudo add-apt-repository ppa:regolith-linux/release
+    sudo apt update
+    sudo apt install i3-gaps
+    
+    ```
     
     polybar
     
