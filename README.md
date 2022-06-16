@@ -97,6 +97,12 @@
     sudo apt-get update && sudo apt-get install rofi
     
     ```
+    alacritty
+    ```
+    sudo add-apt-repository ppa:mmstick76/alacritty 
+    sudo apt install alacritty
+    
+    ```
     
     apps (light, nitrogen, alacritty, feh, discord,zscroll)
     ```
