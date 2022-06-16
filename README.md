@@ -14,3 +14,23 @@
    Run: ``` mkdir ~/dotfiles
             alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
             echo ".cfg" >> .gitignore
+            git clone --bare git@github.com:yurimaster2112/dotfiles.git $HOME/dotfiles
+            alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
+            config checkout ```
+   delete conflicted files. Then, run ``` config checkout ``` again.
+   Finally, run: ``` config config --local status.showUntrackedFiles no ```
+   
+   Set-up Vim:
+   ``` sudo apt install vim ```
+ 
+   Clone Vim Plug:
+   ``` curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ```
+   
+    Install Plugins:
+    ``` :PlugInstall ```
+    
+    Install JSnode:
+    
+    
+ 
