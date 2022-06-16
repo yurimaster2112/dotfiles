@@ -92,6 +92,22 @@
     Download: https://github.com/polybar/polybar/releases
     `tar xvzf polybar-<version>.tar. Now change into the extracted folder (generally cd polybar-<version>) and run ./build.sh`
     
+    polybar themes:
+    clone my config first:
+    ```
+    config pull
+    ```
+    clone polybar themes:
+    ```
+    git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
+    
+    ```
+    restore previous version:
+    ```
+    config restore ~/.config/polybar/cuts
+    
+    ```
+    
     rofi
     ```
     sudo apt-get update && sudo apt-get install rofi
@@ -104,7 +120,7 @@
     
     ```
     
-    apps (light, nitrogen, alacritty, feh, discord,zscroll)
+    apps (light, nitrogen, alacritty, feh, discord,zscroll,spotify)
     ```
     sudo apt install light
     sudo apt install nitrogen
