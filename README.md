@@ -68,4 +68,18 @@
      ```
     
     
+    Setup I3
+    
+    
+    polybar
+    
+    
+    rofi
+    
+    
+    apps (light, nitrogen, alacritty, feh)
+    ```
+    sudo apt install light
+    sudo apt install nitrogen
+    sudo apt install feh
  
