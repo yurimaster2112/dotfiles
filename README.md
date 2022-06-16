@@ -2,7 +2,8 @@
    https://1password.com/downloads/linux
    Run: 
    ``` 
-   dpkg -i ~/Download/1Password 
+   sudo dpkg -i ~/Download/1Password 
+   
    ```
 2. Install Git:
    ``` 
@@ -16,7 +17,10 @@
    
    ```
 3. Set up SSH connection:
-   ``` ssh-keygen -t ed25519 ```
+   ``` 
+   ssh-keygen -t ed25519
+   
+   ```
 5. Set-up Git Bare Repository:
    https://www.atlassian.com/git/tutorials/dotfiles
    Run: 
@@ -30,11 +34,14 @@
    ```
    delete conflicted files. Then, run: 
    ``` 
-   config checkout 
-   ``` again.
+   config checkout
+   
+   ```
+   
    Finally, run: 
    ``` 
    config config --local status.showUntrackedFiles no 
+   
    ```
    
    Set-up and update Vim:
@@ -46,31 +53,38 @@
    ```
  
    Clone Vim Plug:
-   ``` curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   ``` 
+   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
     ```
    
     Install Plugins:
     ``` 
     :PlugInstall
+    
     ```
     
     Install JSnode:
     ```
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     sudo apt-get install -y nodejs
+    
     ```
     Setup COC:
-    ``` CocInstall coc-clangd
-        CocInstall coc-pyright
-        CocInstall coc-python
-        CocInstall coc-sh
-     ```
+    ``` 
+    CocInstall coc-clangd
+    CocInstall coc-pyright
+    CocInstall coc-python
+    CocInstall coc-sh
+    
+    ```
     
     
     Setup I3
     ```
     sudo apt install i3
+    
     ```
     
     i3-gaps:
@@ -81,18 +95,24 @@
     
     ```
     
-    polybar
-    https://github.com/polybar/polybar/wiki/Compiling
+    Setup polybar
+    Follow instructions at https://github.com/polybar/polybar/wiki/Compiling
     build dependencies:
     ```
-    sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-devl ibxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+    sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0  devl ibxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
     
     sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev     libnl-genl-3-dev
     ```
-    Download: https://github.com/polybar/polybar/releases
-    `tar xvzf polybar-<version>.tar. Now change into the extracted folder (generally cd polybar-<version>) and run ./build.sh`
+    Download the lastest polybar release at: https://github.com/polybar/polybar/releases
+    ``` 
+    cd ~/Download
+    tar xvzf polybar-<version>.tar
+    ```
     
-    polybar themes:
+    Now change into the extracted folder (generally `cd polybar-<version>`) and run `./build.s`
+    
+    Install polybar themes:
+   
     clone my config first:
     ```
     config pull
@@ -108,21 +128,41 @@
     
     ```
     
-    rofi
+    Install Rofi
     ```
     sudo apt-get update && sudo apt-get install rofi
     
     ```
-    alacritty
+    Install Alacritty
     ```
     sudo add-apt-repository ppa:mmstick76/alacritty 
     sudo apt install alacritty
     
     ```
+    Install Spotify
+    ```
+    curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
+    echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
     
-    apps (light, nitrogen, alacritty, feh, discord,zscroll,spotify)
+    ```
+    Then you can install spotify:
+    ```
+    sudo apt-get update && sudo apt-get install spotify-client
+    
+    ```
+    Install Discord 
+    Dowload at: https://discord.com/download
+    Run:
+    ```
+    sudo dpkg -i ~/Download/discord--verison.
+    
+    ```
+    Supporting Apps: light, nitrogen, feh,playerctl
     ```
     sudo apt install light
     sudo apt install nitrogen
     sudo apt install feh
+    sudo apt install playerctl
+    
+    ```
  
