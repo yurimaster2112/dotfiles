@@ -18,6 +18,7 @@ set noswapfile
 set incsearch
 set scrolloff=8
 set signcolumn=yes
+hi Normal guibg=NONE ctermbg=NONE 
             
 
 "Plug-in section started here:
@@ -32,9 +33,10 @@ Plug 'preservim/nerdcommenter' "Comment plugin
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
 Plug 'raimondi/delimitmate' "auto closing ( ' 
 Plug 'vim-airline/vim-airline' "status bar
+Plug 'ap/vim-css-color' "css color
 call plug#end() "End
 colorscheme gruvbox "Set colorscheme according to plugin
-
+au BufNewFile,BufRead /*.rasi setf css
 
 "Vim remap
 "<C-w>v vertical split
@@ -57,7 +59,7 @@ nmap <leader>vrc :edit ~/.vimrc<cr>
 nmap <leader>tmx :edit ~/.tmux.conf<cr>
 nmap <leader>coc :edit ~/.vim/coc-settings.json<cr>
 nmap <leader>i3 :edit ~/.config/i3/config<cr>
-
+nmap <leader>bar :edit ~/.config/polybar/cuts/config.ini<cr>
 "Functional remap:
 nmap <leader>Q :bufdo bdelete<cr> 
 
