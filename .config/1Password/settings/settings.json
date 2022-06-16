@@ -1,5 +1,0 @@
-{
-  "app.double": false,
-  "ui.routes.lastUsedRoute": "{\"type\":\"ItemDetail\",\"content\":{\"itemListRoute\":{\"unlockedRoute\":{\"collectionUuid\":\"LCMCB7YVBBFTXKUVLE6274GOCQ\"},\"itemListType\":{\"type\":\"Vault\",\"content\":\"6\"},\"category\":null,\"sortBehavior\":null},\"itemId\":\"5C\"}}",
-  "security.authenticatedUnlock.enabled": true
-}
