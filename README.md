@@ -3,23 +3,19 @@
    Run: 
    ``` 
    sudo dpkg -i ~/Download/1Password 
-   
    ```
 2. Install Git:
    ``` 
    sudo apt install git 
-   
    ```
    Initial set-up:
    ```
    git config --global user.name "Yurimaster2112"
    git config --global user.email "Yurimaster2112@gmail.com"
-   
    ```
 3. Set up SSH connection:
    ``` 
    ssh-keygen -t ed25519
-   
    ```
 5. Set-up Git Bare Repository:
    https://www.atlassian.com/git/tutorials/dotfiles
@@ -35,13 +31,11 @@
    delete conflicted files. Then, run: 
    ``` 
    config checkout
-   
    ```
    
    Finally, run: 
    ``` 
    config config --local status.showUntrackedFiles no 
-   
    ```
    
    Set-up and update Vim:
@@ -49,27 +43,22 @@
    sudo add-apt-repository ppa:jonathonf/vim
    sudo apt update
    sudo apt install vim
-   
    ```
  
    Clone Vim Plug:
    ``` 
    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
     ```
-   
     Install Plugins:
     ``` 
     :PlugInstall
-    
     ```
     
     Install JSnode:
     ```
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     sudo apt-get install -y nodejs
-    
     ```
     Setup COC:
     ``` 
@@ -77,14 +66,12 @@
     CocInstall coc-pyright
     CocInstall coc-python
     CocInstall coc-sh
-    
     ```
     
     
     Setup I3
     ```
     sudo apt install i3
-    
     ```
     
     i3-gaps:
@@ -92,7 +79,6 @@
     sudo add-apt-repository ppa:regolith-linux/release
     sudo apt update
     sudo apt install i3-gaps
-    
     ```
     
     Setup polybar
@@ -120,49 +106,42 @@
     clone polybar themes:
     ```
     git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
-    
     ```
     restore previous version:
     ```
     config restore ~/.config/polybar/cuts
-    
     ```
     
     Install Rofi
     ```
     sudo apt-get update && sudo apt-get install rofi
-    
     ```
     Install Alacritty
     ```
     sudo add-apt-repository ppa:mmstick76/alacritty 
     sudo apt install alacritty
-    
     ```
     Install Spotify
     ```
     curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
     echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-    
     ```
     Then you can install spotify:
     ```
     sudo apt-get update && sudo apt-get install spotify-client
-    
     ```
     Install Discord 
     Dowload at: https://discord.com/download
     Run:
     ```
     sudo dpkg -i ~/Download/discord--verison.
-    
     ```
-    Supporting Apps: light, nitrogen, feh,playerctl
+    Supporting Apps: light, nitrogen, feh,playerctl, ranger
     ```
     sudo apt install light
     sudo apt install nitrogen
     sudo apt install feh
     sudo apt install playerctl
-    
+    sudo apt install ranger
     ```
  
