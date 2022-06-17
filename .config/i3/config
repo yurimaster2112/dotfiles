@@ -163,7 +163,7 @@ assign [class="Gnome-terminal"] $ws2
 assign [class="firefox"] $ws3
 assign [class="1Password"] $ws4
 assign [class="discord"] $ws5
-assign [class="Spotify"] $ws10
+for_window [class = "Spotify"] move to workspace $ws10
 
 
 
