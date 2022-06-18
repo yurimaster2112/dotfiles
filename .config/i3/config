@@ -30,7 +30,8 @@ floating_modifier $mod
 #exec_always feh --bg-scale ~/Wallpapers/abstract-dark-4.jpg
 #exec_always feh --bg-scale ~/Wallpapers/abstract-dark-5.jpg
 exec_always feh --bg-fill ~/Wallpapers/samurai-girl-tattoo.jpg
-exec_always ~/.config/polybar/launch.sh --cuts
+#exec_always ~/.config/polybar/launch.sh --cuts
+exec_always ~/.config/polybar/launch.sh --mybar
 exec_always compton
 
 # start a terminal
