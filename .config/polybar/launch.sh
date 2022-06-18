@@ -11,9 +11,9 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
-	if [[ "$style" == "hack" || "$style" == "cuts" ]]; then
-		polybar -q top -c "$dir/$style/config.ini" &
-		polybar -q bottom -c "$dir/$style/config.ini" &
+	if [[ "$style" == "hack" || "$style" == "cuts" || "$style" == "mybar" || "$style" == "test" ]]; then
+		polybar -q top -c "$dir/$style/config.ini" 
+		#polybar -q bottom -c "$dir/$style/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
 	else
@@ -69,6 +69,13 @@ elif [[ "$1" == "--panels" ]]; then
 	style="panels"
 	launch_bar
 
+elif [[ "$1" == "--mybar" ]]; then
+	style="mybar"
+	launch_bar
+
+elif [[ "$1" == "--test" ]]; then
+	style="test"
+	launch_bar
 else
 	cat <<- EOF
 	Usage : launch.sh --theme
@@ -77,5 +84,6 @@ else
 	--blocks    --colorblocks    --cuts      --docky
 	--forest    --grayblocks     --hack      --material
 	--panels    --pwidgets       --shades    --shapes
+    --mybar
 	EOF
 fi
