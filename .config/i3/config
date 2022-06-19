@@ -58,7 +58,7 @@ bindsym $mod+Shift+q [class=".*"] kill
 
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec ~/.config/rofi/launchers/misc/launcher.sh
+bindsym $mod+d exec ~/.config/rofi/launchers/myrofi/launcher.sh
 bindsym $mod+shift+d exec dmenu_run
 bindsym $mod+p exec ~/.config/rofi/powermenu/powermenu.sh
 
