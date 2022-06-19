@@ -136,12 +136,14 @@
     ```
     sudo dpkg -i ~/Download/discord--verison.
     ```
-    Supporting Apps: light, nitrogen, feh,playerctl, ranger
+    Supporting Apps: light, nitrogen, feh,playerctl, ranger, scrot, viewnior
     ```
     sudo apt install light
     sudo apt install nitrogen
     sudo apt install feh
     sudo apt install playerctl
     sudo apt install ranger
+    sudo apt install scrot
+    sudo apt install viewnior
     ```
  
