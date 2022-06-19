@@ -1,5 +1,5 @@
 dir="$HOME/.config/rofi/applets/android"
-rofi_command="rofi -theme $dir/three.rasi"
+rofi_command="rofi -theme $dir/main.rasi"
 
 # Error msg
 msg() {
