@@ -24,8 +24,8 @@ window {
     transparency:                   "real";
     border-radius:                  12px;
     width:                          100px;
-    location:                       east;
-    x-offset:                       -15px;
+    location:                       north;
+    x-offset:                       100px;
     y-offset:                       0px;
 }
 

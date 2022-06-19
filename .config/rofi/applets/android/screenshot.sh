@@ -1,10 +1,3 @@
-#!/usr/bin/env bash
-
-## Author  : Aditya Shakya
-## Mail    : adi1090x@gmail.com
-## Github  : @adi1090x
-## Twitter : @adi1090x
-
 dir="$HOME/.config/rofi/applets/android"
 rofi_command="rofi -theme $dir/three.rasi"
 
@@ -21,7 +14,7 @@ window=""
 # Variable passed to rofi
 options="$screen\n$area\n$window"
 
-chosen="$(echo -e "$options" | $rofi_command -p '' -dmenu -selected-row 1)"
+chosen="$(echo -e "$options" | $rofi_command -p '' -dmenu -selected-row 0)"
 case $chosen in
     $screen)
 		if [[ -f /usr/bin/scrot ]]; then
