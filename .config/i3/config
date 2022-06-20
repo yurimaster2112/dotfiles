@@ -172,7 +172,8 @@ for_window [class = "Spotify"] move to workspace $ws10
 bindsym $mod+x mode "$mode_system"
 set $mode_system (l)og_out  (s)uspend  (r)eboot  (p)ower_off
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    #bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    bindsym l exec --no-startup-id i3lock -f -i ~/Wallpapers/axyl.png, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff, mode "default"
