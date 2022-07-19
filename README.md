@@ -25,7 +25,7 @@
    alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
    echo ".cfg" >> .gitignore
    git clone --bare git@github.com:yurimaster2112/dotfiles.git $HOME/dotfiles
-   alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
+   alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
    config checkout 
    ```
    delete conflicted files. Then, run: 
