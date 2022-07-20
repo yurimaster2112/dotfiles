@@ -144,6 +144,7 @@
     sudo apt install playerctl
     sudo apt install ranger
     sudo apt install scrot
+    sudo apt install xclip
     sudo apt install viewnior
     ```
  
