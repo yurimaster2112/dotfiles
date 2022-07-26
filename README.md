@@ -116,6 +116,11 @@
     ```
     sudo apt-get update && sudo apt-get install rofi
     ```
+    Modify $PATH variable, open .bashrc or .zshrc in the home directory. Append this line at the end of the file:
+    ```
+    export PATH=~/.config/rofi/bin:$PATH
+    ```
+    
     Install Alacritty
     ```
     sudo add-apt-repository ppa:mmstick76/alacritty 
