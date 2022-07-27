@@ -49,43 +49,40 @@
    ``` 
    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    ```
-    Install Plugins:
+   ```
+   Install Plugins:
     ``` 
     :PlugInstall
     ```
     
-    Install JSnode:
+   Install JSnode:
     ```
     curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
     sudo apt-get install -y nodejs
     ```
-    Setup COC:
+   Setup COC:
     ``` 
     CocInstall coc-clangd
     CocInstall coc-pyright
     CocInstall coc-python
     CocInstall coc-sh
     ```
-    
-    
-    Setup I3
+   Setup I3
     ```
     sudo apt install i3
     ```
-    
-    i3-gaps:
+   i3-gaps:
     ```
     sudo add-apt-repository ppa:regolith-linux/release
     sudo apt update
     sudo apt install i3-gaps
     ```
     
-    Setup polybar
+   Setup polybar:
     Follow instructions at https://github.com/polybar/polybar/wiki/Compiling
     build dependencies:
     ```
-   sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+    sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
     
     sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev     libnl-genl-3-dev
     ```
@@ -98,35 +95,36 @@
     Now change into the extracted folder (generally `cd polybar-<version>`) and run `./build.s`
     
     Install polybar themes:
-   
-    clone my config first:
-    ```
-    config pull
-    ```
-    clone polybar themes:
     ```
     git clone --depth=1 https://github.com/adi1090x/polybar-themes.git
     ```
-    restore previous version:
+    restore my config:
     ```
-    config restore ~/.config/polybar/cuts
+    config restore ~/.config/polybar
     ```
     
-    Install Rofi
+   Install Rofi
     ```
     sudo apt-get update && sudo apt-get install rofi
     ```
+    Clone Rofi themes:
+    ```
+    git clone --depth=1 https://github.com/adi1090x/rofi.git
+    cd rofi
+    chmod +x setup.sh
+    ```
+
     Modify $PATH variable, open .bashrc or .zshrc in the home directory. Append this line at the end of the file:
     ```
     export PATH=~/.config/rofi/bin:$PATH
     ```
     
-    Install Alacritty
+   Install Alacritty
     ```
     sudo add-apt-repository ppa:mmstick76/alacritty 
     sudo apt install alacritty
     ```
-    Install Spotify
+   Install Spotify
     ```
     curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
     echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
