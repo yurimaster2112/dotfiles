@@ -29,7 +29,7 @@ floating_modifier $mod
 #exec_always feh --bg-scale ~/Wallpapers/cartoon-brown-1.jpg
 #exec_always feh --bg-scale ~/Wallpapers/abstract-dark-4.jpg
 #exec_always feh --bg-scale ~/Wallpapers/abstract-dark-5.jpg
-exec_always feh --bg-fill ~/Wallpapers/samurai-girl-tattoo.jpg
+exec_always feh --bg-fill ~/Wallpapers/rain-house-tree.jpg
 #exec_always ~/.config/polybar/launch.sh --cuts
 exec_always ~/.config/polybar/launch.sh --mybar
 exec_always compton
@@ -170,9 +170,9 @@ for_window [class = "Spotify"] move to workspace $ws10
 
 # Set shut down, restart and locking features
 bindsym $mod+x mode "$mode_system"
-set $mode_system (l)og_out  (s)uspend  (r)eboot  (p)ower_off
+set $mode_system (l)og_out  (s)uspend  (r)eboot  (p)ower_off s(w)itch
 mode "$mode_system" {
-    #bindsym l exec --no-startup-id i3-msg exit, mode "default"
+    bindsym w exec --no-startup-id i3-msg exit, mode "default"
     bindsym l exec --no-startup-id i3lock -f -i ~/Wallpapers/axyl.png, mode "default"
     bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"

@@ -38,7 +38,7 @@
    config config --local status.showUntrackedFiles no 
    ```
    
-   Set-up and update Vim:
+6. Set-up and update Vim:
    ``` 
    sudo add-apt-repository ppa:jonathonf/vim
    sudo apt update
@@ -67,7 +67,7 @@
     CocInstall coc-python
     CocInstall coc-sh
     ```
-   Setup I3
+7. Setup I3, Polybar, Rofi.
     ```
     sudo apt install i3
     ```
@@ -118,7 +118,7 @@
     ```
     export PATH=~/.config/rofi/bin:$PATH
     ```
-    
+8. Misc: 
    Install Alacritty
     ```
     sudo add-apt-repository ppa:mmstick76/alacritty 
@@ -133,7 +133,7 @@
     ```
     sudo apt-get update && sudo apt-get install spotify-client
     ```
-    Install Discord 
+   Install Discord 
     Dowload at: https://discord.com/download
     Run:
     ```
