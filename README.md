@@ -25,7 +25,7 @@
    alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
    echo ".cfg" >> .gitignore
    git clone --bare git@github.com:yurimaster2112/dotfiles.git $HOME/dotfiles
-   alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME
+   alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
    config checkout 
    ```
    delete conflicted files. Then, run: 
@@ -85,7 +85,7 @@
     Follow instructions at https://github.com/polybar/polybar/wiki/Compiling
     build dependencies:
     ```
-    sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0  devl ibxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+   sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
     
     sudo apt install libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev     libnl-genl-3-dev
     ```
@@ -116,6 +116,11 @@
     ```
     sudo apt-get update && sudo apt-get install rofi
     ```
+    Modify $PATH variable, open .bashrc or .zshrc in the home directory. Append this line at the end of the file:
+    ```
+    export PATH=~/.config/rofi/bin:$PATH
+    ```
+    
     Install Alacritty
     ```
     sudo add-apt-repository ppa:mmstick76/alacritty 
@@ -144,6 +149,7 @@
     sudo apt install playerctl
     sudo apt install ranger
     sudo apt install scrot
+    sudo apt install xclip
     sudo apt install viewnior
     ```
  
