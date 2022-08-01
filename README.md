@@ -117,6 +117,7 @@
     Modify $PATH variable, open .bashrc or .zshrc in the home directory. Append this line at the end of the file:
     ```
     export PATH=~/.config/rofi/bin:$PATH
+    export PATH=~/.config/polybar/mybar/scripts:$PATH
     ```
 8. Misc: 
    Install Alacritty
