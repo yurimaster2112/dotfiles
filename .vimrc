@@ -31,10 +31,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto complete
 Plug 'preservim/nerdtree' "File Explorer.
 Plug 'preservim/nerdcommenter' "Comment plugin
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
-Plug 'raimondi/delimitmate' "auto closing ( ' 
+"Plug 'raimondi/delimitmate' "auto closing ( ' 
 Plug 'vim-airline/vim-airline' "status bar
+Plug 'Yggdroot/indentLine' "Indentation indicator
 Plug 'ap/vim-css-color' "css color
 call plug#end() "End
+
+
 colorscheme gruvbox "Set colorscheme according to plugin
 au BufNewFile,BufRead /*.rasi setf css
 
@@ -63,8 +66,11 @@ nmap <leader>bar :edit ~/.config/polybar/cuts/config.ini<cr>
 "Functional remap:
 nmap <leader>Q :bufdo bdelete<cr> 
 
-"remapping control - P for fzf search
+"Fzf mappings
 nnoremap <C-p> :Files<Cr>
+nnoremap <C-g> :GFiles<Cr>
+nnoremap <C-o> :Buffers<Cr>
+nnoremap <C-f> :Rg! 
 
 
 
@@ -80,11 +86,16 @@ nnoremap <leader>b :NERDTree<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 
-
-
 "Nerd Commenter remap
 nmap <C>cc :NERDCommenterComment<CR>
 
+"remap parenthesis for automatically clsoing
+inoremap (; (<CR>);<C-c>O
+inoremap (, (<CR>),<C-c>O
+inoremap {; {<CR>};<C-c>O
+inoremap {, {<CR>},<C-c>O
+inoremap [; [<CR>];<C-c>O
+inoremap [, [<CR>],<C-c>O
 
 
 " Reference chart of values:
