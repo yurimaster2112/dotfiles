@@ -54,8 +54,8 @@ bindsym $mod+bracketright gaps outer current minus 5
 bindsym $mod+q kill
 bindsym $mod+Shift+q [class=".*"] kill
 
-
-
+# Change windows using Alt + tab
+bindsym $mod+Tab workspace back_and_forth
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec ~/.config/rofi/launchers/myrofi/launcher.sh
@@ -164,10 +164,11 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 #Workspaces assigments
 assign [class="Alacritty"] $ws1
 #for_window [class="Alacritty"] $ws1
-assign [class="ghidra-Ghidra"] $ws2
-assign [class="firefox"] $ws3
-assign [class="1Password"] $ws4
-assign [class="discord"] $ws5
+assign [class="Sublime_text"] $ws2
+assign [class="ghidra-Ghidra"] $ws3
+assign [class="firefox"] $ws4
+assign [class="1Password"] $ws5
+assign [class="discord"] $ws9
 for_window [class = "Spotify"] move to workspace $ws10
 
 
