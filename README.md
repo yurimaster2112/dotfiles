@@ -151,4 +151,22 @@
     sudo apt install xclip
     sudo apt install viewnior
     ```
- 
+   Install exa:
+    Download lastest zip file at: https://github.com/ogham/exa/releases
+    Extract and copy the exa's bin file into /usr/local/bin
+    Copy exa's man page into /usr/share/man/man1
+9. Shell swaps to zsh and Oh-My-Zsh plugin manager:
+
+   Install Zsh
+    ```
+    sudo apt install zsh
+    ```
+   Shell swap:
+    ```
+    chsh -S (which zsh)
+    ```
+   Install Oh-My-Zsh plugin manager and powerlevel10k:
+   ```
+    sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+   ```
