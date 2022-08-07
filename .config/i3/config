@@ -65,7 +65,7 @@ bindsym $mod+p exec ~/.config/rofi/powermenu/powermenu.sh
 # start bluetooth
 bindsym $mod+b exec ~/.config/polybar/mybar/scripts/bluetooth.sh
 
-bindsym $mod+r exec ranger
+bindsym $mod+r exec alacritty -e 'ranger'
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
