@@ -47,7 +47,8 @@ source $ZSH/oh-my-zsh.sh
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 alias lss='exa -laG --icons --group-directories-first --color=always'
-
+alias V='alacritty --class='vim' -e 'vim''
+alias opdf='zathura'
 #PATH modifies:
 export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
 
