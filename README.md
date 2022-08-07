@@ -155,6 +155,15 @@
     Download lastest zip file at: https://github.com/ogham/exa/releases
     Extract and copy the exa's bin file into /usr/local/bin
     Copy exa's man page into /usr/share/man/man1
+   Install Pandoc and PDFlatex
+    ```
+    sudo apt install pandoc
+    sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+    ```
+    Install Zathura as a pdf reader:
+    ```
+    sudo apt install zathura zathura-cb zathura-pdf-poppler zathura-ps
+    ``` 
 9. Shell swaps to zsh and Oh-My-Zsh plugin manager:
 
    Install Zsh
