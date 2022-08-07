@@ -26,15 +26,14 @@ call plug#begin('~/.vim/plugged') "Start
 Plug 'morhetz/gruvbox' "Colorscheme Plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "Search Plugin
 Plug 'junegunn/fzf.vim' "Search Plugin
-"Plug 'dense-analysis/ale' "Syntax checker
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "Auto complete
 Plug 'preservim/nerdtree' "File Explorer.
 Plug 'preservim/nerdcommenter' "Comment plugin
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
-"Plug 'raimondi/delimitmate' "auto closing ( ' 
 Plug 'vim-airline/vim-airline' "status bar
 Plug 'Yggdroot/indentLine' "Indentation indicator
 Plug 'ap/vim-css-color' "css color
+Plug 'tpope/vim-fugitive'
 call plug#end() "End
 
 
