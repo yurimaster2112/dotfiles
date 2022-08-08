@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-## Author  : Aditya Shakya
-## Mail    : adi1090x@gmail.com
-## Github  : @adi1090x
-## Twitter : @adi1090x
-
 # Available Styles
 # >> Created and tested on : rofi 1.6.0-1
 #
@@ -15,7 +10,7 @@
 # full_circle     full_square     full_rounded     full_alt
 # row_circle      row_square      row_rounded      row_alt
 
-theme="card_alt"
+theme="column_circle"
 dir="$HOME/.config/rofi/powermenu"
 
 # random colors

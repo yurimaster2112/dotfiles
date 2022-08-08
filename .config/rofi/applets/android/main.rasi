@@ -19,7 +19,7 @@ window {
     orientation:                    horizontal;
 
     /*change these values to move the box.*/
-    x-offset:                       -600px;
+    x-offset:                       -450px;
     y-offset:                       30px;
 }
 

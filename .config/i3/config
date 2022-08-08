@@ -57,7 +57,7 @@ bindsym $mod+Tab workspace back_and_forth
 # start dmenu (a program launcher)
 bindsym $mod+d exec ~/.config/rofi/launchers/myrofi/launcher.sh
 bindsym $mod+shift+d exec dmenu_run
-bindsym $mod+p exec ~/.config/rofi/powermenu/powermenu.sh
+bindsym $mod+p exec ~/.config/rofi/applets/android/powermenu.sh
 
 # start bluetooth
 bindsym $mod+b exec ~/.config/polybar/mybar/scripts/bluetooth.sh
