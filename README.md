@@ -165,6 +165,10 @@
     ```
     sudo apt install zathura zathura-cb zathura-pdf-poppler zathura-ps
     ``` 
+   Install Udiskie for automounting external drives:
+    ```
+    sudo apt install udiskie
+    ```
 9. Shell swaps to zsh and Oh-My-Zsh plugin manager:
 
    Install Zsh
