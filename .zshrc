@@ -19,11 +19,9 @@ ZSH_THEME="powerlevel10/powerlevel10k"
 # Uncomment the following line to enable command auto-correction.
  ENABLE_CORRECTION="true"
 
-plugins=(git
-        zsh-autosuggestions
+plugins=(zsh-autosuggestions
         zsh-syntax-highlighting
         web-search
-        copypath
         extract)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
@@ -41,14 +39,24 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
+# Functions:
+fcd (){
+    cd "$(find -type d | fzf)"
+}
 
-
+copypath (){
+  local file="${1:-.}"
+  [[ $file = /* ]] || file="$PWD/$file"
+  print -n "${file:a}" | clipcopy || return 1
+  echo ${(%):-"%B${file:a}%b copied to clipboard."}
+}
 # ALIASES:
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 alias lss='exa -laG --icons --group-directories-first --color=always'
 alias V='alacritty --class='vim' -e 'vim''
 alias opdf='zathura'
+alias getpath='copypath $(find -type d | fzf)'
 #PATH modifies:
 export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
 
