@@ -19,6 +19,7 @@ set noswapfile
 set incsearch
 set scrolloff=8
 set signcolumn=yes
+let &t_ut=''
 hi Normal guibg=NONE ctermbg=NONE 
             
 
@@ -40,6 +41,7 @@ Plug 'francoiscabrol/ranger.vim' "Ranger integration plugin
 "Colorschemes:
 Plug 'morhetz/gruvbox' "Colorscheme Plugin
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'dylanaraps/wal.vim'
 call plug#end() "End
 
 
@@ -51,7 +53,6 @@ au BufNewFile,BufRead /*.rasi setf css
 "<C-w>s horizontal split
 "<C-w>+ or <C-w>- vertical resize
 "<C-w> > or <C-w> < horizontal resize
-
 
 "reselect visual mode after indenting
 vnoremap < <gv
@@ -144,7 +145,7 @@ let SOCI.syntax = 'default'
 
 let Linux = {}
 let Linux.path = '~/vimwiki/Linux/'
-let Linux.path = 'Linux'
+let Linux.name = 'Linux'
 let Linux.auto_toc = 1
 let Linux.ext = '.md'
 let Linux.syntax = 'default'
