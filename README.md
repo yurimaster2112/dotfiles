@@ -1,10 +1,10 @@
-1. Install 1password:
+# Install 1password:
    https://1password.com/downloads/linux
    Run: 
    ``` 
    sudo dpkg -i ~/Download/1Password 
    ```
-2. Install Git:
+# Install Git:
    ``` 
    sudo apt install git 
    ```
@@ -13,11 +13,11 @@
    git config --global user.name "Yurimaster2112"
    git config --global user.email "Yurimaster2112@gmail.com"
    ```
-3. Set up SSH connection:
+# Set up SSH connection:
    ``` 
    ssh-keygen -t ed25519
    ```
-5. Set-up Git Bare Repository:
+# Set-up Git Bare Repository:
    https://www.atlassian.com/git/tutorials/dotfiles
    Run: 
    ``` 
@@ -38,7 +38,7 @@
    config config --local status.showUntrackedFiles no 
    ```
    
-6. Set-up and update Vim:
+# Set-up and update Vim:
    ``` 
    sudo add-apt-repository ppa:jonathonf/vim
    sudo apt update
@@ -67,7 +67,7 @@
     CocInstall coc-python
     CocInstall coc-sh
     ```
-7. Setup I3, Polybar, Rofi.
+# Setup I3, Polybar, Rofi.
     ```
     sudo apt install i3
     ```
@@ -107,7 +107,7 @@
     ```
     sudo apt-get update && sudo apt-get install rofi
     ```
-    Clone Rofi themes:
+   Clone Rofi themes:
     ```
     git clone --depth=1 https://github.com/adi1090x/rofi.git
     cd rofi
@@ -119,13 +119,25 @@
     export PATH=~/.config/rofi/bin:$PATH
     export PATH=~/.config/polybar/mybar/scripts:$PATH
     ```
-8. Misc: 
-   Install Alacritty
+# Terminal emulator and compositor:
+   Install Kitty
     ```
-    sudo add-apt-repository ppa:mmstick76/alacritty 
-    sudo apt install alacritty
+    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+    ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
     ```
-   Install Spotify
+    Install Picom
+        Dependencies:
+    ```
+    libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-xinerama0-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl1-mesa-dev libpcre2-dev libpcre3-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson
+    ```
+        Build:
+        ```
+        $ git submodule update --init --recursive
+        $ meson --buildtype=release . build
+        $ ninja -C build
+        $ ninja -C build install
+        ```
+# MISC
     ```
     curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
     echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -142,14 +154,7 @@
     ```
     Supporting Apps: light, nitrogen, feh,playerctl, ranger, scrot, viewnior
     ```
-    sudo apt install light
-    sudo apt install nitrogen
-    sudo apt install feh
-    sudo apt install playerctl
-    sudo apt install ranger
-    sudo apt install scrot
-    sudo apt install xclip
-    sudo apt install viewnior
+    sudo apt install light nitrogen feg playerctl ranger scrot xclip viewnior tmux
     ```
    Install exa:
     Download lastest zip file at: https://github.com/ogham/exa/releases
@@ -161,7 +166,7 @@
     sudo apt install pandoc
     sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
     ```
-    Install Zathura as a pdf reader:
+   Install Zathura as a pdf reader:
     ```
     sudo apt install zathura zathura-cb zathura-pdf-poppler zathura-ps
     ``` 
@@ -169,7 +174,7 @@
     ```
     sudo apt install udiskie
     ```
-9. Shell swaps to zsh and Oh-My-Zsh plugin manager:
+# Zsh shell and Oh-My-zsh:
 
    Install Zsh
     ```
