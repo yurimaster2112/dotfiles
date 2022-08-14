@@ -5,7 +5,7 @@ filetype plugin on
 syntax on
 set tabstop=4 softtabstop=4
 "set list
-"set listchars=tab:>+ ,trail:-
+"set listchars=tab:>+ ,trail: '-'
 set shiftwidth=4
 set expandtab
 set smartindent
@@ -19,6 +19,7 @@ set noswapfile
 set incsearch
 set scrolloff=8
 set signcolumn=yes
+"set guifont=*
 let &t_ut=''
 hi Normal guibg=NONE ctermbg=NONE 
             
@@ -44,7 +45,16 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'dylanaraps/wal.vim'
 call plug#end() "End
 
-
+"====Colorscheme====
+let g:gruvbox_italic=1
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 colorscheme gruvbox
 au BufNewFile,BufRead /*.rasi setf css
 

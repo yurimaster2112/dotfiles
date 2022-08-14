@@ -16,8 +16,7 @@ floating_modifier $mod
 
 
 #Start-up commands:
-#exec_always feh --bg-fill ~/Wallpapers/rain-house-tree.jpg
-exec_always wal -R
+exec_always feh --bg-fill ~/Wallpapers/rain-house-tree.jpg
 exec_always ~/.config/polybar/launch.sh --mybar
 exec_always udiskie -ans
 exec_always picom --experimental-backends --config=/home/yuri/.config/picom/picom.conf -b
