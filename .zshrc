@@ -59,6 +59,6 @@ alias opdf='zathura'
 alias getpath='copypath $(find -type d | fzf)'
 #PATH modifies:
 export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
-
+export OPENWEATHER_APY_KEY='72abb44c31abdfeae2e614dd88cef0b7'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

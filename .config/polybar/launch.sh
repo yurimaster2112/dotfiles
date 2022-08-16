@@ -12,10 +12,12 @@ launch_bar() {
 
 	# Launch the bar
 	if [[ "$style" == "hack" || "$style" == "cuts" || "$style" == "mybar" || "$style" == "test" ]]; then
-		polybar -q top -c "$dir/$style/config.ini" 
+		polybar -q top -c "$dir/$style/config.ini" &
 		#polybar -q bottom -c "$dir/$style/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
 		bash "$dir"/pwidgets/launch.sh --main
+	elif [[ "$style" == "gaps" ]]; then
+		bash "$dir"/gaps/launch.sh
 	else
 		polybar -q main -c "$dir/$style/config.ini" &	
 	fi
@@ -73,8 +75,8 @@ elif [[ "$1" == "--mybar" ]]; then
 	style="mybar"
 	launch_bar
 
-elif [[ "$1" == "--test" ]]; then
-	style="test"
+elif [[ "$1" == "--gaps" ]]; then
+	style="gaps"
 	launch_bar
 else
 	cat <<- EOF
@@ -84,6 +86,6 @@ else
 	--blocks    --colorblocks    --cuts      --docky
 	--forest    --grayblocks     --hack      --material
 	--panels    --pwidgets       --shades    --shapes
-    --mybar
+    --mybar     --gaps
 	EOF
 fi
