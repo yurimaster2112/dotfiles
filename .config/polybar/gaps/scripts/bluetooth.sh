@@ -1,0 +1,1 @@
+/home/yuri/scripts/polybar/bluetooth.sh
