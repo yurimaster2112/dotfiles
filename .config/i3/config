@@ -16,13 +16,14 @@ floating_modifier $mod
 
 
 #Start-up commands:
-exec_always feh --bg-fill ~/Wallpapers/rain-house-tree.jpg
-exec_always ~/.config/polybar/launch.sh --gaps
+exec_always feh --bg-fill ~/Wallpapers/nord1.jpg
+exec_always ~/.config/polybar/launch.sh --tokyo
 #exec_always ~/.config/polybar/launch.sh --mybar
-exec_always udiskie -anT
+exec_always udiskie -ans
 exec_always picom --experimental-backends --config=/home/yuri/.config/picom/picom.conf -b
 exec_always xmodmap ~/.xmodmap
 exec_always xrdb ~/.Xresources
+
 # start a terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+Return exec alacritty

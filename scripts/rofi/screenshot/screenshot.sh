@@ -1,4 +1,5 @@
-dir="$HOME/.config/rofi/applets/android"
+dir="$HOME/scripts/rofi/screenshot/"
+#dir="$HOME/.config/rofi/applets/android"
 rofi_command="rofi -theme $dir/main.rasi"
 
 # Error msg

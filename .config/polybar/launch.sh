@@ -11,7 +11,7 @@ launch_bar() {
 	while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 	# Launch the bar
-	if [[ "$style" == "hack" || "$style" == "cuts" || "$style" == "mybar" || "$style" == "test" ]]; then
+	if [[ "$style" == "hack" || "$style" == "cuts" || "$style" == "mybar" || "$style" == "tokyo" ]]; then
 		polybar -q top -c "$dir/$style/config.ini" &
 		#polybar -q bottom -c "$dir/$style/config.ini" &
 	elif [[ "$style" == "pwidgets" ]]; then
@@ -23,7 +23,11 @@ launch_bar() {
 	fi
 }
 
-if [[ "$1" == "--material" ]]; then
+if [[ "$1" == "--tokyo" ]]; then
+	style="tokyo"
+	launch_bar
+
+elif [[ "$1" == "--material" ]]; then
 	style="material"
 	launch_bar
 
@@ -86,6 +90,6 @@ else
 	--blocks    --colorblocks    --cuts      --docky
 	--forest    --grayblocks     --hack      --material
 	--panels    --pwidgets       --shades    --shapes
-    --mybar     --gaps
+    --mybar     --gaps           --tokyo
 	EOF
 fi
