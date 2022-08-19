@@ -1,11 +1,8 @@
-" My settings started from here
 set nocompatible
 set bg=dark
 filetype plugin on
 syntax on
 set tabstop=4 softtabstop=4
-"set list
-"set listchars=tab:>+ ,trail: '-'
 set shiftwidth=4
 set expandtab
 set smartindent
@@ -19,10 +16,12 @@ set noswapfile
 set incsearch
 set scrolloff=8
 set signcolumn=yes
-"set guifont=*
+set laststatus=2
 let &t_ut=''
+set termguicolors
+set noshowmode
 hi Normal guibg=NONE ctermbg=NONE 
-            
+
 
 "Plug-in section started here:
 call plug#begin('~/.vim/plugged') "Start
@@ -33,7 +32,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree' "File Explorer.
 Plug 'preservim/nerdcommenter' "Comment plugin
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
-Plug 'vim-airline/vim-airline' "status bar
+ Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine' "Indentation indicator
 Plug 'ap/vim-css-color' "css color
 Plug 'tpope/vim-fugitive' "Git plugin
@@ -43,6 +42,7 @@ Plug 'francoiscabrol/ranger.vim' "Ranger integration plugin
 Plug 'morhetz/gruvbox' "Colorscheme Plugin
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'dylanaraps/wal.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end() "End
 
 "====Colorscheme====
@@ -58,19 +58,39 @@ endif
 colorscheme gruvbox
 au BufNewFile,BufRead /*.rasi setf css
 
+let g:lightline = {'colorscheme': 'gruvbox'}
 "Vim remap
 "<C-w>v vertical split
-"<C-w>s horizontal split
+"<C-w>s hozontal split
 "<C-w>+ or <C-w>- vertical resize
 "<C-w> > or <C-w> < horizontal resize
+
+"Remap and key-bindding session
+"set leader = space
+let mapleader = " " 
+
+
+"====SystemMapping===
+nnoremap <Leader>w :w<CR>
+
+"Yank till end
+map Y y$ 
+"Copy, cut, and paste from clipboard:
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
 
 "reselect visual mode after indenting
 vnoremap < <gv
 vnoremap > >gv
 
-"Remap and key-bindding session
-"set leader = space
-let mapleader = " " 
+"Easy search and replace:
+vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+omap s :normal vs<CR>
 
 "Ranger remap
 let g:ranger_open_new_tab = 1
@@ -82,7 +102,7 @@ nmap <leader>vrc :edit ~/.vimrc<cr>
 nmap <leader>tmx :edit ~/.tmux.conf<cr>
 nmap <leader>coc :edit ~/.vim/coc-settings.json<cr>
 nmap <leader>i3 :edit ~/.config/i3/config<cr>
-nmap <leader>bar :edit ~/.config/polybar/cuts/config.ini<cr>
+
 "Functional remap:
 nmap <leader>Q :bufdo bdelete<cr> 
 
@@ -90,7 +110,7 @@ nmap <leader>Q :bufdo bdelete<cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-g> :GFiles<Cr>
 nnoremap <C-o> :Buffers<Cr>
-nnoremap <C-f> :Rg! 
+nnoremap <C-k> :Rg! 
 
 "COC remap:
 nmap <leader>gd <Plug>(coc-definition)
@@ -98,7 +118,7 @@ nmap <leader>gr <Plug>(coc-references)
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-python', 
                             \ 'coc-pyright', 'coc-clangd', 'coc-browser', 
                             \ 'coc-fzf-preview', 'coc-ltex', 'coc-markdownlint', 
-                            \ 'coc-markdown-preview-enhanced', 'coc-word']
+                            \ 'coc-markdown-preview-enhanced', 'coc-word', 'coc-diagnostic']
 
 "NERDTree remap:
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -122,7 +142,7 @@ let vimwiki = {}
 let vimwiki.path = '~/vimwiki/'
 let vimwiki.name = 'main'
 let vimwiki.ext = '.md'
-let vimwiki.syntax = 'default' "Avaiable options: default, markdonw, mediawiki, media
+let vimwiki.syntax = 'markdown' "Avaiable options: default, markdonw, mediawiki, media
 let vimwiki.auto_toc = 1
 
 let CSE3100 = {}
@@ -137,35 +157,35 @@ let CSE3500.path = '~/vimwiki/School/CSE3500'
 let CSE3500.name = 'CSE3500'
 let CSE3500.auto_toc = 1
 let CSE3500.ext = '.md'
-let CSE3500.syntax = 'default'
+let CSE3500.syntax = 'markdown'
 
 let CSE3666 = {}
 let CSE3666.path = '~/vimwiki/School/CSE3666'
 let CSE3666.name = 'CSE3666'
 let CSE3666.auto_toc = 1
 let CSE3666.ext = '.md'
-let CSE3666.syntax = 'default'
+let CSE3666.syntax = 'markdown'
 
 let SOCI= {}
 let SOCI.path = '~/vimwiki/School/SOCI'
 let SOCI.name = 'SOCI'
 let SOCI.auto_toc = 1
 let SOCI.ext = '.md'
-let SOCI.syntax = 'default'
+let SOCI.syntax = 'markdown'
 
 let Linux = {}
 let Linux.path = '~/vimwiki/Linux/'
 let Linux.name = 'Linux'
 let Linux.auto_toc = 1
 let Linux.ext = '.md'
-let Linux.syntax = 'default'
+let Linux.syntax = 'markdown'
 
 let Programming= {}
 let Programming.path = '~/vimwiki/Programming/'
 let Programming.name = 'Programming'
 let Programming.auto_toc = 1
 let Programming.ext = '.md'
-let Programming.nested_syntaxes = {'default': '.md', 'python': 'python', 'c': 'cpp'}
+let Programming.syntax = 'markdown'
 
 let g:vimwiki_list = [vimwiki, CSE3100, CSE3500, CSE3666, SOCI, Linux, Programming]
 
@@ -176,7 +196,6 @@ nmap <Leader>tr <Plug>VimwikiTableMoveColumnRight
 let &t_SI = "\e[5 q" "insert mode should use blinking line
 let &t_EI = "\e[1 q" "Everything else except insert mode should use blinking line
 let g:airline#extensions#ale#enabled = 1 "always enable ALE status box
-
 
 "Automatically start up
 " Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.

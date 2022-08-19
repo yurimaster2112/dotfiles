@@ -42,7 +42,7 @@
    ``` 
    sudo add-apt-repository ppa:jonathonf/vim
    sudo apt update
-   sudo apt install vim
+   sudo apt install vim vim-gtk
    ```
  
    Clone Vim Plug:
@@ -61,12 +61,7 @@
     sudo apt-get install -y nodejs
     ```
    Setup COC:
-    ``` 
-    CocInstall coc-clangd
-    CocInstall coc-pyright
-    CocInstall coc-python
-    CocInstall coc-sh
-    ```
+   Already configured in vimrc file.
 # Setup I3, Polybar, Rofi.
     ```
     sudo apt install i3

@@ -11,6 +11,14 @@ export RANGER_LOAD_DEFAULT_RC=false
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export EDITOR="vim"
+export BROWSER=firefox ddgr
+#
+# Fzf Catpuchin color scheme:
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+--color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
 
 ZSH_THEME="powerlevel10/powerlevel10k"
 
@@ -22,7 +30,8 @@ ZSH_THEME="powerlevel10/powerlevel10k"
 plugins=(zsh-autosuggestions
         zsh-syntax-highlighting
         web-search
-        extract)
+        extract
+        zsh-vi-mode)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
@@ -51,11 +60,12 @@ copypath (){
   echo ${(%):-"%B${file:a}%b copied to clipboard."}
 }
 # ALIASES:
+alias \?='ddgr'
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 alias ls='exa -laG --icons --group-directories-first --color=always'
 alias V='alacritty --class='vim' -e 'vim''
-alias opdf='zathura'
+alias opdf='kitty --detach 'zathura''
 alias getpath='copypath $(find -type d | fzf)'
 #PATH modifies:
 export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
