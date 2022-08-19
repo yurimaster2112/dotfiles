@@ -29,7 +29,6 @@ ZSH_THEME="powerlevel10/powerlevel10k"
 
 plugins=(zsh-autosuggestions
         zsh-syntax-highlighting
-        web-search
         extract
         zsh-vi-mode)
 
@@ -60,15 +59,20 @@ copypath (){
   echo ${(%):-"%B${file:a}%b copied to clipboard."}
 }
 # ALIASES:
-alias \?='ddgr'
+alias '?'='duck'
+alias '??'='google'
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 alias ls='exa -laG --icons --group-directories-first --color=always'
 alias V='alacritty --class='vim' -e 'vim''
 alias opdf='kitty --detach 'zathura''
 alias getpath='copypath $(find -type d | fzf)'
-#PATH modifies:
+#=======================PATH========================================
+export PATH=/home/yuri/scripts/:$PATH
 export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
+
+
+#======================API Keys========================================
 export OPENWEATHER_APY_KEY='72abb44c31abdfeae2e614dd88cef0b7'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

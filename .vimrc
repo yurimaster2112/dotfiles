@@ -31,8 +31,9 @@ Plug 'junegunn/fzf.vim' "Search Plugin
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree' "File Explorer.
 Plug 'preservim/nerdcommenter' "Comment plugin
+Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator' "tmux navigator
- Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim' "status bar
 Plug 'Yggdroot/indentLine' "Indentation indicator
 Plug 'ap/vim-css-color' "css color
 Plug 'tpope/vim-fugitive' "Git plugin
