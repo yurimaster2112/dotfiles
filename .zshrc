@@ -42,12 +42,7 @@ source $ZSH/oh-my-zsh.sh
  else
    export EDITOR='vim'
  fi
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-# Functions:
+#==============================Functions=============================
 fcd (){
     cd "$(find -type d | fzf)"
 }
@@ -58,13 +53,14 @@ copypath (){
   print -n "${file:a}" | clipcopy || return 1
   echo ${(%):-"%B${file:a}%b copied to clipboard."}
 }
-# ALIASES:
+
+#=============================ALIASES==========================
 alias '?'='duck'
 alias '??'='google'
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 alias ls='exa -laG --icons --group-directories-first --color=always'
-alias V='alacritty --class='vim' -e 'vim''
+alias V='kitty  --class 'vim' --detach 'vim''
 alias opdf='kitty --detach 'zathura''
 alias getpath='copypath $(find -type d | fzf)'
 #=======================PATH========================================
