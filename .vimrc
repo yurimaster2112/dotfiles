@@ -111,7 +111,8 @@ nmap <leader>Q :bufdo bdelete<cr>
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-g> :GFiles<Cr>
 nnoremap <C-o> :Buffers<Cr>
-nnoremap <C-k> :Rg! 
+"Which key should i map u?
+"nnoremap <C-k> :Rg! 
 
 "COC remap:
 nmap <leader>gd <Plug>(coc-definition)
@@ -137,6 +138,8 @@ inoremap {; {<CR>};<C-c>O
 inoremap {, {<CR>},<C-c>O
 inoremap [; [<CR>];<C-c>O
 inoremap [, [<CR>],<C-c>O
+
+autocmd BufWritePost *note-*.md silent !buildNote %:p
 
 "Vimwiki section:
 let vimwiki = {}

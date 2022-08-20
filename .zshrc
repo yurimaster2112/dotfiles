@@ -57,6 +57,7 @@ copypath (){
 #=============================ALIASES==========================
 alias '?'='duck'
 alias '??'='google'
+alias ssh-keygen='ssh-keygen -t ed25519'
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 alias ls='exa -laG --icons --group-directories-first --color=always'
@@ -64,7 +65,9 @@ alias V='kitty  --class 'vim' --detach 'vim''
 alias opdf='kitty --detach 'zathura''
 alias getpath='copypath $(find -type d | fzf)'
 #=======================PATH========================================
-export PATH=/home/yuri/scripts/:$PATH
+
+export PATH=/home/yuri/scripts/w3m/:$PATH
+export PATH=/home/yuri/scripts/vim/:$PATH
 export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
 
 
