@@ -59,7 +59,17 @@ endif
 colorscheme gruvbox
 au BufNewFile,BufRead /*.rasi setf css
 
-let g:lightline = {'colorscheme': 'gruvbox'}
+"====Lightline======
+let g:lightline = {
+      \ 'colorscheme': 'gruvbox',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 "Vim remap
 "<C-w>v vertical split
 "<C-w>s hozontal split
