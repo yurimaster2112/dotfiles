@@ -65,10 +65,7 @@ alias V='kitty  --class 'vim' --detach 'vim''
 alias opdf='kitty --detach 'zathura''
 alias getpath='copypath $(find -type d | fzf)'
 #=======================PATH========================================
-
-export PATH=/home/yuri/scripts/w3m/:$PATH
-export PATH=/home/yuri/scripts/vim/:$PATH
-export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
+#$PATH enviroment variable should be placed under .zshenv.
 
 
 #======================API Keys========================================
