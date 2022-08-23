@@ -51,27 +51,26 @@
    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
    ```
    Install Plugins:
-    ``` 
-    :PlugInstall
-    ```
-    
+   ``` 
+   :PlugInstall
+   ```
    Install JSnode:
-    ```
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    ```
+   ```
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   sudo apt-get install -y nodejs
+   ```
    Setup COC:
    Already configured in vimrc file.
 # Setup I3, Polybar, Rofi.
-    ```
-    sudo apt install i3
-    ```
+   ```
+   sudo apt install i3
+   ```
    i3-gaps:
-    ```
-    sudo add-apt-repository ppa:regolith-linux/release
-    sudo apt update
-    sudo apt install i3-gaps
-    ```
+   ```
+   sudo add-apt-repository ppa:regolith-linux/release
+   sudo apt update
+   sudo apt install i3-gaps
+   ```
     
    Setup polybar:
     Follow instructions at https://github.com/polybar/polybar/wiki/Compiling
