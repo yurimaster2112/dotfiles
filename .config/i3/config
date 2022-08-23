@@ -54,11 +54,14 @@ bindsym $mod+p exec ~/.config/rofi/applets/android/powermenu.sh
 
 # start bluetooth
 bindsym $mod+b exec ~/.config/polybar/mybar/scripts/bluetooth.sh
-
 bindsym $mod+r exec kitty --detach 'ranger'
+
 bindsym $mod+v exec kitty --class 'vim' --detach 'vim'
+bindsym $mod+shift+v exec kitty --class 'vim' -e $HOME/scripts/vim/wiki
+
 bindsym $mod+n exec kitty --class 'note_taker' -T="note_taker" -e $HOME/scripts/vim/note 
 bindsym $mod+shift+n exec openRecent
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
