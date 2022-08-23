@@ -13,6 +13,7 @@ export RANGER_LOAD_DEFAULT_RC=false
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export BROWSER=firefox ddgr
+export TERM=xterm-kitty
 #
 # Fzf Catpuchin color scheme:
 export FZF_DEFAULT_OPTS=" \
