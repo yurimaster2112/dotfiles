@@ -43,18 +43,6 @@ source $ZSH/oh-my-zsh.sh
  else
    export EDITOR='vim'
  fi
-#==============================Functions=============================
-fcd (){
-    cd "$(find -type d | fzf)"
-}
-
-copypath (){
-  local file="${1:-.}"
-  [[ $file = /* ]] || file="$PWD/$file"
-  print -n "${file:a}" | clipcopy || return 1
-  echo ${(%):-"%B${file:a}%b copied to clipboard."}
-}
-
 #=============================ALIASES==========================
 alias '?'='duck'
 alias '??'='google'
@@ -72,6 +60,21 @@ alias getpath='copypath $(find -type d | fzf)'
 
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
+#==============================Functions=============================
+fcd (){
+    cd ~ && cd "$(find -type d | fzf)"
+}
+
+copypath (){
+  local file="${1:-.}"
+  [[ $file = /* ]] || file="$PWD/$file"
+  print -n "${file:a}" | clipcopy || return 1
+  echo ${(%):-"%B${file:a}%b copied to clipboard."}
+}
+
+chpwd (){
+  ls
+}
 #=======================PATH========================================
 #$PATH enviroment variable should be placed under .zshenv.
 
