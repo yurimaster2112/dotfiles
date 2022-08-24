@@ -58,13 +58,20 @@ copypath (){
 #=============================ALIASES==========================
 alias '?'='duck'
 alias '??'='google'
+
+alias home='cd ~'
+alias download='cd ~/Downloads'
+alias document='cd ~/Documents'
+alias dropbox='cd ~/Dropbox'
+
 alias ssh-keygen='ssh-keygen -t ed25519'
-alias ghidra='/opt/ghidra/ghidraRun'
-alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
+alias locate='mlocate'
 alias ls='exa -lG --icons --group-directories-first --color=always'
 alias V='kitty  --class 'vim' --detach 'vim''
-alias opdf='kitty --detach 'zathura''
 alias getpath='copypath $(find -type d | fzf)'
+
+alias ghidra='/opt/ghidra/ghidraRun'
+alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 #=======================PATH========================================
 #$PATH enviroment variable should be placed under .zshenv.
 
