@@ -1,0 +1,33 @@
+#!/usr/bin/env perl
+use v5.14;
+$_ = shift;
+$| = 1;
+
+# markdown file
+if (/\.md$/) {
+  say "markdown file detected";
+  if (not `which pandoc`) {
+    say "pandoc not found";
+    exit 1;
+  }
+  if (not `which w3m`) {
+    say "w3m not found";
+    exit 1;
+  }
+  `pandoc -s -o /tmp/index.html $_ 2>/dev/null`;
+  system 'w3m', '/tmp/index.html';
+  exit
+}
+
+# file
+if (-r $_) {
+  `which xdg-open` && exec 'xdg-open', $_;
+  say "unable to open file: $_";
+  exit 1;
+}
+
+# bare url
+m,^http, or  s,^,https://,;
+`which w3m` && exec 'w3m', $_;
+`which firefox` && exec 'firefox', $_;
+say "unable to determine how to open $_";
