@@ -119,3 +119,5 @@ fi
 # Git
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'
 #export PATH=/home/yuri/.config/polybar/mybar/scripts:$PATH
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

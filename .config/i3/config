@@ -1,6 +1,7 @@
 # Alt key for mod1, window key for mod4
 set $mod Mod1
-set $win Mod4
+set $win win
+set $control ctrl
 
 font Hack Nerd Font 13
 # Hide borders
@@ -19,7 +20,6 @@ floating_modifier $mod
 exec_always feh --bg-fill ~/Wallpapers/naruto.png
 exec_always xrdb ~/.Xresources
 exec_always ~/.config/polybar/launch.sh --tokyo
-#exec_always ~/.config/polybar/launch.sh --mybar
 exec_always udiskie -ans
 exec_always picom --experimental-backends --config=/home/yuri/.config/picom/picom.conf -b
 exec_always xmodmap ~/.xmodmap
@@ -55,10 +55,8 @@ bindsym $mod+p exec ~/.config/rofi/applets/android/powermenu.sh
 # start bluetooth
 bindsym $mod+b exec ~/.config/polybar/mybar/scripts/bluetooth.sh
 bindsym $mod+r exec kitty --detach 'ranger'
-
 bindsym $mod+v exec kitty --class 'vim' --detach 'vim'
 bindsym $mod+shift+v exec kitty --class 'vim' -e $HOME/scripts/vim/wiki
-
 bindsym $mod+n exec kitty --class 'note_taker' -T="note_taker" -e $HOME/scripts/vim/note 
 bindsym $mod+shift+n exec openRecent
 

@@ -14,12 +14,22 @@ export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="vim"
 export BROWSER=firefox ddgr
 export TERM=xterm-kitty
-#
-# Fzf Catpuchin color scheme:
+
+#====================FZF=========================
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
 --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
---color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+--color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796 \
+--info=inline \
+--multi \
+--preview-window=:hidden \
+--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200' \
+--prompt='∼ ' --pointer='▶' --marker='✓' \
+--bind '?:toggle-preview'"
+
+export FZF_COMPLETION_TRIGGER='..'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 ZSH_THEME="powerlevel10/powerlevel10k"
 
@@ -30,8 +40,7 @@ ZSH_THEME="powerlevel10/powerlevel10k"
 
 plugins=(zsh-autosuggestions
         zsh-syntax-highlighting
-        extract
-        zsh-vi-mode)
+        extract)
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 source $ZSH/oh-my-zsh.sh
@@ -50,7 +59,6 @@ alias '??'='google'
 alias home='cd ~'
 alias download='cd ~/Downloads'
 alias document='cd ~/Documents'
-alias dropbox='cd ~/Dropbox'
 
 alias ssh-keygen='ssh-keygen -t ed25519'
 alias locate='mlocate'
@@ -71,6 +79,15 @@ copypath (){
   print -n "${file:a}" | clipcopy || return 1
   echo ${(%):-"%B${file:a}%b copied to clipboard."}
 }
+#
+# find-in-file - usage: fif <SEARCH_TERM>
+fif() {
+  if [ ! "$#" -gt 0 ]; then
+    echo "Need a string to search for!";
+    return 1;
+  fi
+  rg --files-with-matches --no-messages --ignore-case "$1" | fzf $FZF_PREVIEW_WINDOW --preview "rg --ignore-case --pretty --context 10 '$1' {}"
+}
 
 chpwd (){
   ls
@@ -78,8 +95,11 @@ chpwd (){
 #=======================PATH========================================
 #$PATH enviroment variable should be placed under .zshenv.
 
-
+bindkey -s '^F' "tmux-sessionizer\n"
+#source ~/.zsh_profile
 #======================API Keys========================================
 export OPENWEATHER_APY_KEY='72abb44c31abdfeae2e614dd88cef0b7'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
