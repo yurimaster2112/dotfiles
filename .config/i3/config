@@ -148,6 +148,7 @@ for_window [instance= "vim"] move to workspace $ws2
 for_window [title="note_taker"] floating enable;[floating] resize set 950 600;move position center
 assign [class="Sublime_text"] $ws2
 assign [class="ghidra-Ghidra"] $ws3
+assign [class="Zathura"] $ws3
 assign [class="firefox"] $ws4
 assign [class="1Password"] $ws5
 assign [class="discord"] $ws9

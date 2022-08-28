@@ -17,6 +17,7 @@ set incsearch
 set scrolloff=8
 set signcolumn=yes
 set laststatus=2
+set t_Co=256
 let &t_ut=''
 set termguicolors
 set noshowmode
@@ -70,7 +71,8 @@ let g:lightline = {
       \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-"Vim remap
+
+"Vim Resize
 "<C-w>v vertical split
 "<C-w>s hozontal split
 "<C-w>+ or <C-w>- vertical resize
@@ -164,6 +166,7 @@ let CSE3100.path = '~/vimwiki/School/CSE3100'
 let CSE3100.name = 'CSE3100'
 let CSE3100.auto_toc = 1
 let CSE3100.ext = '.md'
+let CSE3100.syntax = 'markdown' "Avaiable options: default, markdonw, mediawiki, media
 let CSE3100.nested_syntaxes = {'c': 'cpp', 'markdown': 'md'}
 
 let CSE3500 = {}
