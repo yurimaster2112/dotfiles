@@ -142,7 +142,7 @@
    ```
    Supporting Apps: light, nitrogen, feh,playerctl, ranger, scrot, viewnior
    ```
-   sudo apt install light nitrogen feg playerctl ranger scrot xclip viewnior tmux
+   sudo apt install light nitrogen feg playerctl ranger scrot xclip viewnior tmux xfsetting
    ```
    Install exa:
    Download lastest zip file at: https://github.com/ogham/exa/releases

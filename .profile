@@ -17,3 +17,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 export PATH=/home/yuri/scripts/vim/:$PATH
 export PATH=/home/yuri/.config/rofi/bin:$PATH
+GTK_THEM="Adwaita-dark"
