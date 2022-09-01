@@ -53,6 +53,8 @@ source $ZSH/oh-my-zsh.sh
    export EDITOR='vim'
  fi
 #=============================ALIASES==========================
+alias 'rar'='java -jar /opt/rars/rar.jar'
+
 alias '?'='duck'
 alias '??'='google'
 

@@ -2,9 +2,17 @@ set nocompatible
 set bg=dark
 filetype plugin on
 syntax on
+set spell spelllang=en_gb
 set tabstop=4 softtabstop=4
 set shiftwidth=4
-set expandtab
+set encoding=UTF-8
+set ruler       "Show cursor position all time.
+set expandtab   "1 Tab = spaces.
+set autoindent
+set nosmartindent
+set cursorline  "show current cursorline.
+set splitbelow  "Horizontal split will display at the bottom.
+set splitright  "Vertical split will display at the right.
 set smartindent
 set relativenumber
 set nu
@@ -13,14 +21,17 @@ set hidden       " Keep unsaved files open
 set noerrorbells
 set nowrap
 set noswapfile
-set incsearch
 set scrolloff=8
 set signcolumn=yes
+set incsearch
 set laststatus=2
-set t_Co=256
+set t_Co=256    "256 colors
 let &t_ut=''
 set termguicolors
 set noshowmode
+set updatetime=300
+set timeoutlen=400
+set clipboard=unnamedplus "system clipboard, contents are copied into + reg.
 hi Normal guibg=NONE ctermbg=NONE 
 
 
@@ -39,7 +50,7 @@ Plug 'Yggdroot/indentLine' "Indentation indicator
 Plug 'ap/vim-css-color' "css color
 Plug 'tpope/vim-fugitive' "Git plugin
 Plug 'francoiscabrol/ranger.vim' "Ranger integration plugin
-
+Plug 'mhinz/vim-startify' "starting page
 "Colorschemes:
 Plug 'morhetz/gruvbox' "Colorscheme Plugin
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -72,22 +83,32 @@ let g:lightline = {
       \ },
       \ }
 
-"Vim Resize
-"<C-w>v vertical split
-"<C-w>s hozontal split
-"<C-w>+ or <C-w>- vertical resize
-"<C-w> > or <C-w> < horizontal resize
+"Vim Resize with <C-w>, can have number in the front.
+nnoremap + :res +5<CR>
+nnoremap - :res -5<CR>
 
-"Remap and key-bindding session
+
 "set leader = space
 let mapleader = " " 
 
-
 "====SystemMapping===
+"Tab complete tion for COC
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent><expr> <C-j>
+        \ pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ coc#refresh()
+let g:coc_confing_home = '~/vim/coc-settings.json'
+" File save
 nnoremap <Leader>w :w<CR>
 
 "Yank till end
-map Y y$ 
+nnoremap Y y$ 
+
+" jump to end of previous word
+nnoremap E ge
+
 "Copy, cut, and paste from clipboard:
 vmap <leader>y "+y
 vmap <leader>d "+d
@@ -96,9 +117,23 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-"reselect visual mode after indenting
+"reselect line and better tabbing in normal mode and visual mode.
 vnoremap < <gv
 vnoremap > >gv
+nnoremap > <S-v>><esc>
+nnoremap < <S-v><<esc>
+
+" Horizontal movement to the end and beginning of the line.
+nnoremap <S-h> g^
+nnoremap <S-l> g$
+vnoremap <S-h> g^
+vnoremap <S-l> g$
+
+"way to move inside wrapped text.
+nnoremap <S-k> gk
+nnoremap <S-j> gj
+vnoremap <S-k> gk
+vnoremap <S-j> gj
 
 "Easy search and replace:
 vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
@@ -110,40 +145,37 @@ let g:ranger_open_new_tab = 1
 let g:ranger_map_keys = 0
 map <leader>r :Ranger<cr>
 
-"kemap for jumpping into config files
-nmap <leader>vrc :edit ~/.vimrc<cr>
-nmap <leader>tmx :edit ~/.tmux.conf<cr>
-nmap <leader>coc :edit ~/.vim/coc-settings.json<cr>
-nmap <leader>i3 :edit ~/.config/i3/config<cr>
-
-"Functional remap:
-nmap <leader>Q :bufdo bdelete<cr> 
+"Buffer related remap
+nnoremap <leader>Q :bufdo bdelete<cr> 
+nnoremap <leader>q :tabclose<CR>
+nnoremap <leader>n :bnext<CR>
+nnoremap <leader>b :bprevious<CR>
+nnoremap <leader>h :tabprevious<CR>
+nnoremap <leader>l :tabnext<CR>
+nnoremap <leader>o :tabnew<CR>
 
 "Fzf mappings
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-g> :GFiles<Cr>
 nnoremap <C-o> :Buffers<Cr>
 "Which key should i map u?
-"nnoremap <C-k> :Rg! 
+"nnoremap <C-k> :Rg!  "COC remap:
 
-"COC remap:
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-python', 
-                            \ 'coc-pyright', 'coc-clangd', 'coc-browser', 
-                            \ 'coc-fzf-preview', 'coc-ltex', 'coc-markdownlint', 
-                            \ 'coc-markdown-preview-enhanced', 'coc-word', 'coc-diagnostic']
+                            \ 'coc-pyright', 'coc-clangd', 
+                            \ 'coc-ltex', 'coc-markdownlint', 
+                            \ 'coc-markdown-preview-enhanced', 'coc-word']
+                            "\ 'coc-snippets']
 
 "NERDTree remap:
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <leader>b :NERDTree<CR>
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
 
 "Nerd Commenter remap
 nmap <C>cc :NERDCommenterComment<CR>
 
-"remap parenthesis for automatically clsoing
+"remap parenthesis for automatically closing and add semicolon.
 inoremap (; (<CR>);<C-c>O
 inoremap (, (<CR>),<C-c>O
 inoremap {; {<CR>};<C-c>O
@@ -151,6 +183,16 @@ inoremap {, {<CR>},<C-c>O
 inoremap [; [<CR>];<C-c>O
 inoremap [, [<CR>],<C-c>O
 
+" Drag Line
+vnoremap <C-j> :m'>+<CR>gv
+vnoremap <C-k> :m-2<CR>gv
+nnoremap <C-j> ddp
+nnoremap <C-k> ddkP
+inoremap <C-j> <esc>ddp
+inoremap <C-k> <esc>ddkP
+
+source $HOME/vim/plug-config/start-screen.vim
+" automatically run this function on the terminal.
 autocmd BufWritePost *note-*.md silent !buildNote %:p
 
 "Vimwiki section:
