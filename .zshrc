@@ -62,6 +62,7 @@ alias home='cd ~'
 alias download='cd ~/Downloads'
 alias document='cd ~/Documents'
 
+alias cat='bat'
 alias ssh-keygen='ssh-keygen -t ed25519'
 alias locate='mlocate'
 alias ls='exa -lG --icons --group-directories-first --color=always'

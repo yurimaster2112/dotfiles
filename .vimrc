@@ -55,6 +55,8 @@ Plug 'ap/vim-css-color' "css color
 Plug 'tpope/vim-fugitive' "Git plugin
 Plug 'francoiscabrol/ranger.vim' "Ranger integration plugin
 Plug 'mhinz/vim-startify' "starting page
+Plug 'lervag/vimtex' "latex for vim
+Plug 'unblevable/quick-scope' "hightlight search
 "Colorschemes:
 Plug 'morhetz/gruvbox' "Colorscheme Plugin
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -64,12 +66,15 @@ call plug#end() "End
 
 
 "====================Sources=========================
-source $HOME/vim/plug-config/colorschemes.vim
 source $HOME/vim/plug-config/start-screen.vim
+source $HOME/vim/plug-config/fzf.vim
 source $HOME/vim/plug-config/vim-wiki.vim
 source $HOME/vim/plug-config/ranger.vim
 source $HOME/vim/plug-config/coc.vim
 source $HOME/vim/plug-config/light-line.vim
+source $HOME/vim/plug-config/vim-tex.vim
+source $HOME/vim/plug-config/quick-scope.vim
+source $HOME/vim/plug-config/colorschemes.vim
 source $HOME/vim/key/custom-keybind.vim
 
 "let g:airline#extensions#ale#enabled = 1 "always enable ALE status box

@@ -152,7 +152,7 @@
    Install Pandoc and PDFlatex:
    ```
    sudo apt install pandoc
-   sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra
+   sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra latexmk
    ```
    Install Zathura as a pdf reader:
    ```

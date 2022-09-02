@@ -1,3 +1,6 @@
+" replace misspelling words.
+nnoremap <C-s> a<C-X><C-S>
+
 "Vim Resize with <C-w>, can have number in the front.
 nnoremap + :res +5<CR>
 nnoremap - :res -5<CR>
@@ -24,8 +27,8 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-vnoremap < <gv
 "reselect line and better tabbing in normal mode and visual mode.
+vnoremap < <gv
 vnoremap > >gv
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
@@ -42,30 +45,33 @@ nnoremap <S-j> gj
 vnoremap <S-k> gk
 vnoremap <S-j> gj
 
+
 "Centralize when moving using control.
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
+
 "Buffer related remap
-nnoremap <leader>Q :bufdo bdelete<cr> 
-nnoremap <leader>q :tabclose<CR>
+nnoremap <leader>Q :%bdelete<CR> "Delete all current buffers
+nnoremap <leader>q :bdelete<CR>     "Delete current buffer.
 nnoremap <leader>n :bnext<CR>
 nnoremap <leader>b :bprevious<CR>
 nnoremap <leader>h :tabprevious<CR>
 nnoremap <leader>l :tabnext<CR>
 nnoremap <leader>o :tabnew<CR>
 
+"Coc remap
+map <leader>d :bufdo CocDisable<CR> "Disable coc features.
+map <leader>e :bufdo CocEnable<CR> "Enable coc features.
+
 "Fzf mappings
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-g> :GFiles<Cr>
 nnoremap <C-b> :Buffers<Cr>
 "Which key should i map u?
-"nnoremap <C-k> :Rg!  "COC remap:
+"nnoremap <C-k> :Rg! 
 
 "NERDTree remap:
 nnoremap <leader>t :NERDTreeToggle<CR>
-
-"Nerd Commenter remap
-"nmap <C>cc :NERDCommenterComment<CR>
 
 "remap parenthesis for automatically closing and add semicolon.
 inoremap (; (<CR>);<C-c>O
@@ -74,6 +80,7 @@ inoremap {; {<CR>};<C-c>O
 inoremap {, {<CR>},<C-c>O
 inoremap [; [<CR>];<C-c>O
 inoremap [, [<CR>],<C-c>O
+inoremap {} {<CR>}<C-c>O
 
 " Drag Line
 vnoremap <C-j> :m'>+<CR>gv
