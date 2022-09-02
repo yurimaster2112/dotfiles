@@ -24,8 +24,8 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-"reselect line and better tabbing in normal mode and visual mode.
 vnoremap < <gv
+"reselect line and better tabbing in normal mode and visual mode.
 vnoremap > >gv
 nnoremap > <S-v>><esc>
 nnoremap < <S-v><<esc>
@@ -42,6 +42,9 @@ nnoremap <S-j> gj
 vnoremap <S-k> gk
 vnoremap <S-j> gj
 
+"Centralize when moving using control.
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 "Buffer related remap
 nnoremap <leader>Q :bufdo bdelete<cr> 
 nnoremap <leader>q :tabclose<CR>
@@ -54,7 +57,7 @@ nnoremap <leader>o :tabnew<CR>
 "Fzf mappings
 nnoremap <C-p> :Files<Cr>
 nnoremap <C-g> :GFiles<Cr>
-nnoremap <C-o> :Buffers<Cr>
+nnoremap <C-b> :Buffers<Cr>
 "Which key should i map u?
 "nnoremap <C-k> :Rg!  "COC remap:
 

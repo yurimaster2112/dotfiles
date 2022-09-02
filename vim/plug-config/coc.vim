@@ -9,6 +9,5 @@ nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-python', 
                             \ 'coc-pyright', 'coc-clangd', 
-                            \ 'coc-ltex', 'coc-markdownlint', 
-                            \ 'coc-markdown-preview-enhanced', 'coc-word']
+                            \ 'coc-vimtex', 'coc-word']
                             "\ 'coc-snippets']
