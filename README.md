@@ -176,3 +176,15 @@
    sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
    ```
+# Rmarkdown:
+```
+    sudo apt install r-base pandoc-citeproc
+```
+    Get into R by running:
+```
+    sudo R
+```
+    Install rmarkdown:
+```
+    install.packages("rmarkdown")
+```

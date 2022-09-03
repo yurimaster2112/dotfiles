@@ -41,6 +41,7 @@ hi Normal guibg=NONE ctermbg=NONE
 
 "Plug-in section started here:
 call plug#begin('~/.vim/plugged') "Start
+"Productivity Plugins
 Plug 'vimwiki/vimwiki' "Vim Wiki
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "Search Plugin
 Plug 'junegunn/fzf.vim' "Search Plugin
@@ -55,8 +56,13 @@ Plug 'ap/vim-css-color' "css color
 Plug 'tpope/vim-fugitive' "Git plugin
 Plug 'francoiscabrol/ranger.vim' "Ranger integration plugin
 Plug 'mhinz/vim-startify' "starting page
-Plug 'lervag/vimtex' "latex for vim
 Plug 'unblevable/quick-scope' "hightlight search
+
+"markdown and pandoc related plugins
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-rmarkdown'
+
 "Colorschemes:
 Plug 'morhetz/gruvbox' "Colorscheme Plugin
 Plug 'dracula/vim', { 'as': 'dracula' }
