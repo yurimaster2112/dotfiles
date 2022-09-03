@@ -1,7 +1,8 @@
 #!/bin/sh
 
 filename=$1
-target="$(dirname "${filename}")/../../Dropbox/pdf"
+#target="$(dirname "${filename}")/../../Dropbox/pdf"
+target="$HOME/Dropbox/pdf"
 outputFile="$(basename "$filename" .md).pdf"
 mkdir -p $target
 
