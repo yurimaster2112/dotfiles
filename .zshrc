@@ -98,6 +98,7 @@ chpwd (){
 #=======================PATH========================================
 #$PATH enviroment variable should be placed under .zshenv.
 
+bindkey -s '^E' "fcd\n"
 bindkey -s '^F' "tmux-sessionizer\n"
 #source ~/.zsh_profile
 #======================API Keys========================================

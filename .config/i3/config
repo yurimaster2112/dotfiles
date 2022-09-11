@@ -19,7 +19,7 @@ floating_modifier $mod
 
 
 #Start-up commands:
-exec_always feh --bg-fill ~/Wallpapers/naruto.png
+exec_always feh --bg-fill ~/Wallpapers/mountais-1920x1080.jpg
 exec_always xrdb ~/.Xresources
 exec_always ~/.config/polybar/launch.sh --tokyo
 exec_always udiskie -ans

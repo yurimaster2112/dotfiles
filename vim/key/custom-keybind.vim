@@ -1,3 +1,9 @@
+" Reload vimrc config.
+nnoremap <leader>r :so<space>%<CR>
+
+" Starify reload.
+nnoremap <leader>s :Startify<CR>
+
 " replace misspelling words.
 nnoremap <C-s> a<C-X><C-S>
 
@@ -5,10 +11,10 @@ nnoremap <C-s> a<C-X><C-S>
 nnoremap + :res +5<CR>
 nnoremap - :res -5<CR>
 
-"Easy search and replace:
-vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
-    \:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
-omap s :normal vs<CR>
+"Easy search and replace using cs. Currently conflicting with vim surrounding
+"vnoremap <silent> s //e<C-r>=&selection=='exclusive'?'+1':''<CR><CR>
+    "\:<C-u>call histdel('search',-1)<Bar>let @/=histget('search',-1)<CR>gv
+"omap s :normal vs<CR>
 
 " File save
 nnoremap <Leader>w :w<CR>
