@@ -15,7 +15,7 @@ window=""
 # Variable passed to rofi
 options="$screen\n$area\n$window"
 
-chosen="$(echo "$options" | $rofi_command -p '' -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p '' -dmenu -selected-row 0)"
 case $chosen in
     $screen)
 		if [[ -f /usr/bin/scrot ]]; then
