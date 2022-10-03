@@ -2,7 +2,7 @@ set nocompatible
 set bg=dark
 filetype plugin on
 syntax on
-set spell spelllang=en_gb
+"set spell spelllang=en_gb
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab   "1 Tab = spaces.
