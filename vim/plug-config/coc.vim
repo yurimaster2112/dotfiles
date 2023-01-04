@@ -8,6 +8,6 @@ let g:coc_confing_home = '~/vim/coc-settings.json'
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-python', 
-                            \ 'coc-pyright', 'coc-clangd', 
+                            \  'coc-clangd', 
                             \ 'coc-vimtex', 'coc-word']
                             "\ 'coc-snippets']

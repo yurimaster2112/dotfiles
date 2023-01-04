@@ -68,6 +68,7 @@ alias locate='mlocate'
 alias ls='exa -lG --icons --group-directories-first --color=always'
 alias V='kitty  --class 'vim' --detach 'vim''
 alias getpath='copypath $(find -type d | fzf)'
+alias vpn='nordvpn'
 
 alias ghidra='/opt/ghidra/ghidraRun'
 alias config='/usr/bin/git --git-dir=/home/yuri/dotfiles/ --work-tree=/home/yuri'

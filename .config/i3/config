@@ -19,7 +19,7 @@ floating_modifier $mod
 
 
 #Start-up commands:
-exec_always feh --bg-fill ~/Wallpapers/nah-dude-chill-i-don't-wanna-fight-i-just-sat-down-to-rest-by-tomislav-jagnjic-1920×1080.jpg
+exec_always feh --bg-fill ~/Wallpapers/ognyan-zahariev-rainystreet-01.jpg
 exec_always xrdb ~/.Xresources
 exec_always ~/.config/polybar/launch.sh --tokyo
 exec_always udiskie -ans
@@ -152,6 +152,7 @@ assign [class="Sublime_text"] $ws2
 assign [class="ghidra-Ghidra"] $ws3
 assign [class="Zathura"] $ws3
 assign [class="firefox"] $ws4
+assign [class="Google-chrome"] $ws4
 assign [class="1Password"] $ws5
 assign [class="discord"] $ws9
 for_window [class = "Spotify"] move to workspace $ws10
